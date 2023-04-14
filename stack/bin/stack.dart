@@ -1,13 +1,22 @@
 import 'dart:collection';
 import 'dart:io';
 
-import 'package:stack/stack.dart' as stack;
+import 'package:stack/stack.dart';
 
 void main(List<String> arguments) {
-  final stack=ListQueue();
-  stack.add(1);
-  stack.add(2);
-  stack.add(3);
-  stack.removeLast();
-  stdout.write(stack);
+//   var stack =ListQueue();
+//   stack.add(1);
+//   stack.add(2);
+//   stack.add(3);
+//  var d= stack.removeLast();
+//  print(d);
+//   stdout.write(stack);
+  StackDs stack = StackDs();
+  stack.push(1);
+  stack.push(2);
+  stack.push(3);
+  stack.push(85);
+  stack.printStack();
+  stdout.writeln();
+  stdout.writeln(stack.greatest());
 }

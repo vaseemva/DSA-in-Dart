@@ -1,5 +1,10 @@
+import 'dart:collection';
+import 'dart:ffi';
 import 'dart:io';
+import 'dart:math';
 
+import 'package:tree/find_max.dart';
+import 'package:tree/levelorder_traversal.dart';
 import 'package:tree/postorder_iterative.dart';
 import 'package:tree/postorder_recursive.dart';
 import 'package:tree/tree.dart';
@@ -23,5 +28,9 @@ void main(List<String> args) {
   recursivePostorder(tree.root);
   stdout.writeln();
   iterativepostorder(tree.root);
+ levelorder(tree.root);
+print(findMax(tree.root));
+  
   
 }
+

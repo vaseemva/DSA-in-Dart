@@ -1,7 +1,9 @@
+
+
 import 'dart:collection';
 import 'dart:io';
 
-import 'package:tree/tree.dart';
+import 'package:tree/binary_search_tree.dart';
 
 levelorder(TreeNode? root) {
   if (root == null) {
@@ -11,7 +13,7 @@ levelorder(TreeNode? root) {
   queue.add(root);
   while (queue.isNotEmpty) {
     TreeNode? temp = queue.removeFirst();
-    stdout.write("${temp.data}..>");
+    stdout.write("${temp.value}..>");
     if (temp.left != null) {
       queue.add(temp.left!);
     }

@@ -42,11 +42,16 @@ void main(List<String> args) {
 
 if (binarySearchTree.search(3)) {
   print("element found");
+
   levelorder(binarySearchTree.root);
 }
+stdout.writeln();
+
  
- print(findMax(binarySearchTree.root)); 
- print(isBst(binarySearchTree.root, -123, 560));
- print(binarySearchTree.findClosestValueInBst(10));
+//  print(findMax(binarySearchTree.root)); 
+//  print(isBst(binarySearchTree.root, -123, 560));
+//  print(binarySearchTree.findClosestValueInBst(10));
+ binarySearchTree.delete(7);
+  levelorder(binarySearchTree.root);
 }
 

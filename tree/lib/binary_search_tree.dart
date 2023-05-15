@@ -39,6 +39,44 @@ class BinarySearchTree {
       }
     }
   }
+  //delete a node from BST
+  void delete(int value) {
+    root = _deleteNode(root, value);
+  }
+  _deleteNode(TreeNode? node, int value) {
+    if (node == null) {
+      return node;
+    }
+    if (value < node.value) {
+      node.left = _deleteNode(node.left, value);
+    } else if (value > node.value) {
+      node.right = _deleteNode(node.right, value);
+    } else {
+      if (node.left == null && node.right == null) {
+        return null;
+      } else if (node.left == null) {
+        return node.right;
+      } else if (node.right == null) {
+        return node.left;
+      } else {
+        TreeNode? temp = _findMinNode(node.right);
+        node.value = temp!.value;
+        node.right = _deleteNode(node.right, temp.value);
+      }
+    }
+    return node;
+  }
+  _findMinNode(TreeNode? node) {
+    if (node == null) {
+      return null;
+    }
+    if (node.left == null) {
+      return node;
+    } else {
+      return _findMinNode(node.left);
+    }
+  }
+
 
   bool search(int value) {
     return _searchNode(root, value);

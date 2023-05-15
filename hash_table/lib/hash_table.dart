@@ -73,7 +73,22 @@ class HashTable {
     }
     return head.value;
   }
+  //greatest element in hash table
+  int? max() {
+    int? max = 0;
+    for (int i = 0; i < _numberOfBuckets!; i++) {
+      HashNode? head = _buckets![i];
+      while (head != null) {
+        if (head.key > max!) {
+          max = head.key;
+        }
+        head = head.next;
+      }
+    }
+    return max;
+  }
 }
+
 
 class HashNode {
   int key;
